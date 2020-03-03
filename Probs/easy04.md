@@ -18,4 +18,4 @@ IDA로 분석을 해 보면 "flag is in data section!"이라고 나와 있다.
 ```
 .data:0000000000601060 flag            db 'flag{this_is_Cplusplus!}',0
 ```
-flag를 찾아보면 flag{this_is_Cplusplus!}임을 알 수 있다.
+flag를 찾아보면 **flag{this_is_Cplusplus!}** 임을 알 수 있다.
