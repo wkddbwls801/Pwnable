@@ -28,4 +28,4 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   v6 = 'e_ti';
   v7 = '}!fl';
 ```
-즉, flag가 flag{32bit_elf!} 임을 알 수 있다.
+즉, flag가 **flag{32bit_elf!}** 임을 알 수 있다.
