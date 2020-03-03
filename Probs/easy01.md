@@ -1,4 +1,5 @@
-``` Pseudocode
+# easy01
+``` C
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   __int64 v3; // rax
