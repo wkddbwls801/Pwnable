@@ -120,7 +120,7 @@ Segmentation fault (core dumped)
 ```
 
 공격이 실패했다. 이유는 gdb에서 분석시에 buf의 주소와 실제 시행 시에 buf의 주소가 차이가 나기 떄문이다.
-bugfile1의 소스 코드르 조금 수정하여 실제  buf 주소가 무엇인지 확인 해 보았다.
+bugfile1의 소스 코드를 조금 수정하여 실제  buf 주소가 무엇인지 확인 해 보았다.
 
 ``` C
 # include <stdio.h>
