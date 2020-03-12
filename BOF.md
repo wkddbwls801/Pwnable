@@ -65,12 +65,12 @@ RET(4)
 SFP(4)   
 buf(256)   
 
-buf가 256byte, SFP가 4byte 그리고 RET(Return address)이니 260 byte를 넘게 입력하면 RET가 덮일 것이다.
-./bugfile1 $(python -c 'print("A" * 264)')를 입력하였을 때, Return address가 덮여서 segmantation fautl가 났다.
-이때 EIP는 0x41414141로 덮인 상태이다.
-이제 쉘 코드를 메모리 어딘가에 넣어서 공격을 하면 된다.
-bugfile1은 argv[1]을 buf로 복사하니, agrv[1]에 넣고 Return address를 buf의 주소로 덮어씌우면 된다.
-buf의 주소를 찾아보겠다.  
+buf가 256byte, SFP가 4byte 그리고 RET(Return address)이니 260 byte를 넘게 입력하면 RET가 덮일 것이다.   
+./bugfile1 $(python -c 'print("A" * 264)')를 입력하였을 때, Return address가 덮여서 segmantation fautl가 났다.   
+이때 EIP는 0x41414141로 덮인 상태이다.   
+이제 쉘 코드를 메모리 어딘가에 넣어서 공격을 하면 된다.   
+bugfile1은 argv[1]을 buf로 복사하니, agrv[1]에 넣고 Return address를 buf의 주소로 덮어씌우면 된다.   
+buf의 주소를 찾아보겠다.   
 main+33 지점이 strcpy 함수가 끝나는 시점이니 이곳에 break를 걸고 디버깅 해 보았다.
 
 ```
