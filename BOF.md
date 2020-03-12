@@ -60,9 +60,11 @@ End of assembler dump.
 
 gdb로 bugfile1을 분석해 보았다. main함수를 disassemble하면 위와 같다.
 main+3에서 stack을 0x100만큼 확장하였다.(변수 할당)   
+
 RET(4)   
 SFP(4)   
 buf(256)   
+
 buf가 256byte, SFP가 4byte 그리고 RET(Return address)이니 260 byte를 넘게 입력하면 RET가 덮일 것이다.
 ./bugfile1 $(python -c 'print("A" * 264)')를 입력하였을 때, Return address가 덮여서 segmantation fautl가 났다.
 이때 EIP는 0x41414141로 덮인 상태이다.
