@@ -101,7 +101,7 @@ Breakpoint 1, 0x0804845c in main ()
 ```
 
 스택에 argv[1]에 입력한 A 264개가 들어 있다.
-buf의 주소는 ** 0xffffce38** 이다.
+buf의 주소는 **0xffffce38** 이다.
 
 이제 argv[1]에 쉘코드를 넣고 RET 전까지 채운 후, buf 주소를 넣으면 된다.
 하지만 buf의 주소가 정확하지 않을 수도 있기 때문에 **NOP Slide** 또는 ** NOP Sled** 라는 기법을 사용하면 성공 확률을 높일 수 있다.
