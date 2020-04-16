@@ -1,5 +1,5 @@
 # FSB
-* FSB : printf나 sprintf와 같이 포맷 스트링을 사용하는 함수에서 발생하는 취약점
+* **FSB** : printf나 sprintf와 같이 포맷 스트링을 사용하는 함수에서 발생하는 취약점
        "%x"나 "%s"와 같이 프로그래머가 지정한 문자열이 아닌 사용자의 입력이 포맷 스트링으로 전달될 때 발생하는 취약점
 * 예시
 ``` C
@@ -23,8 +23,8 @@ $
 ```
 
 # Double Free & Use-After-Free
-* Double Free : 이미 해제된 메모리를 다시 한번 해제하는 취약점
-* UAF(Use-After-Free) : 해제된 메모리에 접근해서 값을 쓸 수 있는 취약점
+* **Double Free** : 이미 해제된 메모리를 다시 한번 해제하는 취약점
+* **UAF(Use-After-Free)** : 해제된 메모리에 접근해서 값을 쓸 수 있는 취약점
 * 예제
 ``` C
 // uaf1.c
@@ -68,5 +68,5 @@ strcpy(a, "Hello World!")에서 Hello World를 복사하는 포인터는 b가 �
 Hello World! 문자열이 출력된다.
 
 # Integer issues
-* 정수의 범위   
+* **정수의 범위**   
 ![image](https://user-images.githubusercontent.com/59531805/79182338-82c6cb00-7e49-11ea-9719-01bb92ce0681.png)
